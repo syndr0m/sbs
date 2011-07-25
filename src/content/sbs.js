@@ -100,6 +100,7 @@ var sbs = (function () {
       layerBg.setAttribute('style', 'position:fixed;background-color:gray;top:0px;left:0px;width:100%;height:100%;z-index:1;opacity:0.4;');
       layerBg.addEventListener("mousedown", onMousedown, false);
       layerBox.appendChild(layerBg);
+      layerBox.setAttribute('style', 'position:absolute;z-index:2147483647;'); // max z-index
       doc.body.appendChild(layerBox);
    };
    
