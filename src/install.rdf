@@ -18,7 +18,7 @@
     </em:targetApplication>
 
     <em:name>Search By Screenshot</em:name>
-    <em:description>Take a screenshot &amp; google search the image !</em:description>
+    <em:description>Take a screenshot and search it on google image !</em:description>
     <em:creator>syndr0m</em:creator>
     <em:homepageURL>https://github.com/syndr0m/sbs</em:homepageURL>
   </Description>
