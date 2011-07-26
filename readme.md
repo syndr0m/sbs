@@ -2,7 +2,7 @@
 
 ## Installation
 
-Download the lastest [sbs.xpi](https://github.com/syndr0m/sbs/raw/master/bin/sbs.xpi). Then, drag-drop it to Firefox. Restart.
+Download the lastest [sbs.xpi](https://github.com/syndr0m/sbs/raw/master/bin/sbs.xpi). Then, drag-drop it on Firefox. Restart.
 
 ## How to use it
 

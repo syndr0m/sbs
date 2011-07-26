@@ -3,7 +3,7 @@
       xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>sbs@syndr0m.com</em:id>
-    <em:version>1.0</em:version>
+    <em:version>1.0.1</em:version>
     <em:type>2</em:type>
     <em:iconURL>chrome://sbs/content/skin/icon-48.png</em:iconURL>
     <em:icon64URL>chrome://sbs/content/skin/icon.png</em:icon64URL>

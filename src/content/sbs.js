@@ -72,28 +72,25 @@ var sbs = (function () {
          var base64Offset = data.indexOf(',');
          if (base64Offset == -1)
             return;
-         var inlineImage = data.substring(base64Offset + 1)
+         var inlineImageData = data.substring(base64Offset + 1)
             .replace(/\+/g, '-').replace(/\//g, '_')
             .replace(/\./g, '=');
-         // post the data to google searchbyimage
-         var form = doc.createElement('form');
-         form.setAttribute('method', 'POST');
-         form.setAttribute('action', 'http://www.google.com/searchbyimage/upload');
-         form.setAttribute('enctype', 'multipart/form-data');
-         form.setAttribute('target', '_blank');
-         var inputs = [ { 'name' : 'image_content', 'value' : inlineImage },
-           { 'name' : 'filename', 'value' : '' },
-           { 'name' : 'image_url', 'value' : '' },
-           { 'name' : 'sbs', 'value' : 'ff_1_0_0' } ];
-         inputs.forEach(function (d) {
-           let i = doc.createElement('input');
-           i.setAttribute('type', 'hidden');
-           i.setAttribute('name', d.name);
-           i.setAttribute('value', d.value);
-           form.appendChild(i);
-         });
-         doc.body.appendChild(form);
-         form.submit();
+         // posting data to google search by image
+         var gsbi = "chrome://sbs/content/gsbi.html";
+         var tab = gBrowser.addTab(gsbi);
+         var tabBrowser = gBrowser.getBrowserForTab(tab);
+         //
+         var submitToGsbi = function submit() {
+            // removing event listener
+            tabBrowser.removeEventListener("load", submitToGsbi, true);
+            // inside new tab => submit the data.
+            let doc = tabBrowser.contentDocument;
+            doc.getElementById('img_content').setAttribute('value', inlineImageData);
+            doc.forms[0].submit();
+            // select tab
+            gBrowser.selectedTab = tab;
+         };
+         tabBrowser.addEventListener("load", submitToGsbi, true);
       }
       
       // shading layer background 
