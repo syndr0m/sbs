@@ -2,6 +2,9 @@
 <overlay id='sbs' xmlns='http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul'>
    <script type='text/javascript' src='chrome://sbs/content/sbs.js' />
    <toolbaritem id="search-container">
-      <image src="chrome://sbs/content/skin/toolbar.png" onclick="sbs();" status="off"/>
+      <toolbarbutton label="Search By Screenshot" class="toolbarbutton-1 chromeclass-toolbar-additional" style="padding:0 2px 0 2px;" onclick="sbs();">
+         <image label="Search By Screenshot" class="toolbarbutton-icon" src="chrome://sbs/content/skin/toolbar.png"/>
+         <label label="Search By Screenshot" class="toolbarbutton-text"/>
+      </toolbarbutton>
    </toolbaritem>
 </overlay>
